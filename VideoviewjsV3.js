@@ -768,6 +768,9 @@ Module.Related.init = async function () {
   const section =
     document.querySelector(".vp-related");
 
+  const viewAll =
+document.querySelector(".vp-related-viewall");
+  
   const list =
     document.getElementById("vp-related-list");
 
@@ -804,6 +807,15 @@ Module.Related.init = async function () {
     CONFIG.RELATED_LIMIT
   );
 
+  if (viewAll) {
+    const current = Module.Feed.current(posts);
+
+    if (current) {
+        const currentItem = Module.Feed.parse(current);
+        viewAll.href = currentItem.contentUrl || "#";
+    }
+  }
+  
   const items = [];
 
   posts.forEach(function (post) {
