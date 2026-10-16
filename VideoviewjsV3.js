@@ -114,8 +114,8 @@ CONFIG
 
 const CONFIG = {
   LATEST_LABEL: "latestvideo",
-  LATEST_LIMIT: 10,
-  RELATED_LIMIT: 12,
+  LATEST_LIMIT: 16,
+  RELATED_LIMIT: 05,
   NAVIGATION_LIMIT: 500,
   IGNORE_LABELS: ["latest", "latestvideo", "featured"],
   FETCH_TIMEOUT_MS: 10000
@@ -874,7 +874,7 @@ Module.Latest.init = async function () {
     }
 
   });
-items.splice(8);
+items.splice(16);
 
   if (!items.length) {
     Helper.hide(section);
