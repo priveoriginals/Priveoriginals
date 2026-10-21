@@ -245,7 +245,33 @@ html{
     scroll-behavior:auto!important;
   }
 }
+/*==================================
+AI BADGE
+==================================*/
 
+.cc-hero-image-wrap{
+position:relative;
+}
+
+.cc-ai-badge{
+position:absolute;
+top:10px;
+right:10px;
+display:none;
+align-items:center;
+justify-content:center;
+padding:6px 10px;
+border-radius:999px;
+background:linear-gradient(135deg,#ff8a00,#ff3d00);
+color:#fff;
+font-size:11px;
+font-weight:700;
+letter-spacing:.6px;
+text-transform:uppercase;
+box-shadow:0 8px 18px rgba(0,0,0,.25);
+z-index:5;
+pointer-events:none;
+}
 /*==================================
 RESPONSIVE
 ==================================*/
@@ -538,7 +564,33 @@ SOCIALS
 .cc-social i{
   font-size:18px;
 }
+/*==================================
+AI NOTICE
+==================================*/
 
+.cc-ai-notice{
+display:none;
+margin:24px 0;
+padding:18px 20px;
+border-radius:18px;
+background:rgba(255,153,0,.08);
+border:1px solid rgba(255,153,0,.25);
+}
+
+.cc-ai-notice strong{
+display:block;
+margin-bottom:8px;
+font-size:16px;
+font-weight:700;
+color:#ffb347;
+}
+
+.cc-ai-notice p{
+margin:0;
+font-size:14px;
+line-height:1.7;
+color:var(--text-color,#ddd);
+}
 /*==================================
 RESPONSIVE
 ==================================*/
@@ -612,6 +664,19 @@ RESPONSIVE
   .cc-social i{
     font-size:16px;
   }
+
+  .cc-ai-badge{
+top:8px;
+right:8px;
+padding:5px 8px;
+font-size:10px;
+}
+
+.cc-ai-notice{
+padding:16px;
+border-radius:16px;
+}
+  
 }
 
 @media(max-width:480px){
