@@ -1,0 +1,1035 @@
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 1
+FOUNDATION + THEME
+==================================================*/
+
+:root{
+  --cc-bg:#09090f;
+  --cc-surface:#11131d;
+  --cc-surface-2:#171b28;
+  --cc-border:rgba(124,58,237,.22);
+  --cc-border-soft:rgba(255,255,255,.08);
+
+  --cc-primary:#7c3aed;
+  --cc-primary-2:#a855f7;
+  --cc-primary-3:#c026d3;
+  --cc-gradient:linear-gradient(135deg,#6d28d9 0%,#9333ea 45%,#c026d3 100%);
+
+  --cc-text:#ffffff;
+  --cc-text-light:#c5c8d4;
+  --cc-text-muted:#8e93a8;
+
+  --cc-radius:22px;
+  --cc-radius-sm:14px;
+  --cc-radius-xs:10px;
+
+  --cc-shadow:0 10px 35px rgba(0,0,0,.45);
+  --cc-shadow-2:0 18px 60px rgba(0,0,0,.55);
+
+  --cc-transition:.30s ease;
+}
+
+/*==================================
+PAGE
+==================================*/
+
+#cc-list{
+  width:100%;
+  background:var(--cc-bg);
+  color:var(--cc-text);
+  padding:34px 0 60px;
+  overflow:hidden;
+}
+
+/*==================================
+CONTAINER
+==================================*/
+
+.cc-container{
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  padding:0 26px;
+  box-sizing:border-box;
+}
+
+/*==================================
+GLOBAL SPACING
+==================================*/
+
+.cc-container > *{
+  margin-bottom:24px;
+}
+
+.cc-container > *:last-child{
+  margin-bottom:0;
+}
+
+/*==================================
+BREADCRUMB
+==================================*/
+
+.cc-breadcrumb{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:6px;
+  font-size:13px;
+  color:var(--cc-text-muted);
+}
+
+.cc-breadcrumb a{
+  color:var(--cc-text-light);
+  opacity:.92;
+}
+
+.cc-breadcrumb a:hover{
+  color:#fff;
+}
+
+.cc-breadcrumb span{
+  opacity:.5;
+  user-select:none;
+}
+
+.cc-current-name{
+  color:#fff;
+  font-weight:500;
+}
+
+/*==================================
+PAGE HEADER
+==================================*/
+
+.cc-page-header{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.cc-page-title{
+  margin:0;
+  font-size:42px;
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  color:#fff;
+}
+
+.cc-page-subtitle{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--cc-text-light);
+  max-width:720px;
+}
+
+/*==================================
+LINKS
+==================================*/
+
+#cc-list a{
+  color:inherit;
+  text-decoration:none;
+  transition:var(--cc-transition);
+}
+
+#cc-list a:hover{
+  text-decoration:none;
+}
+
+/*==================================
+IMAGES
+==================================*/
+
+
+/*==================================
+BUTTONS
+==================================*/
+
+#cc-list button{
+  font:inherit;
+  border:none;
+  outline:none;
+  cursor:pointer;
+}
+
+/*==================================
+BOX SIZING
+==================================*/
+
+#cc-list *,
+#cc-list *::before,
+#cc-list *::after{
+  box-sizing:border-box;
+}
+
+/*==================================
+SCROLLBAR
+==================================*/
+
+::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#09090f;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#2b2148;
+  border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#6d28d9;
+}
+
+/*==================================
+SELECTION
+==================================*/
+
+::selection{
+  background:#7c3aed;
+  color:#fff;
+}
+
+/*==================================
+FOCUS
+==================================*/
+
+button:focus-visible,
+a:focus-visible{
+  outline:2px solid var(--cc-primary);
+  outline-offset:3px;
+}
+
+/*==================================
+MOTION
+==================================*/
+
+html{
+  scroll-behavior:smooth;
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  #cc-list{
+    padding:26px 0 48px;
+  }
+
+  .cc-container{
+    padding:0 20px;
+  }
+
+  .cc-page-title{
+    font-size:36px;
+  }
+
+  .cc-page-subtitle{
+    font-size:14px;
+  }
+}
+
+@media(max-width:767px){
+  #cc-list{
+    padding:18px 0 40px;
+  }
+
+  .cc-container{
+    padding:0 16px;
+  }
+
+  .cc-page-header{
+    margin-bottom:14px;
+  }
+
+  .cc-page-title{
+    font-size:30px;
+  }
+
+  .cc-page-subtitle{
+    font-size:13px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-container{
+    padding:0 14px;
+  }
+
+  .cc-page-title{
+    font-size:26px;
+  }
+
+  .cc-breadcrumb{
+    font-size:12px;
+    gap:8px;
+  }
+}
+
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 2
+FILTER TABS
+==================================================*/
+
+/*==================================
+FILTER SECTION
+==================================*/
+
+.cc-filter-section{
+  width:100%;
+}
+
+/*==================================
+FILTER TABS
+==================================*/
+
+.cc-filter-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+/*==================================
+FILTER BUTTON
+==================================*/
+
+.cc-filter-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  height:42px;
+  padding:0 18px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  color:var(--cc-text-light);
+
+  font-size:14px;
+  font-weight:600;
+  line-height:1;
+
+  white-space:nowrap;
+
+  transition:var(--cc-transition);
+}
+
+.cc-filter-btn:hover{
+  background:rgba(124,58,237,.10);
+  border-color:rgba(124,58,237,.30);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
+.cc-filter-btn.is-active{
+  background:var(--cc-gradient);
+  border-color:transparent;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(124,58,237,.25);
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  .cc-filter-tabs{
+    gap:10px;
+  }
+
+  .cc-filter-btn{
+    height:40px;
+    padding:0 16px;
+    font-size:13px;
+  }
+}
+
+@media(max-width:767px){
+  .cc-filter-tabs{
+    gap:8px;
+  }
+
+  .cc-filter-btn{
+    height:38px;
+    padding:0 15px;
+    font-size:13px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-filter-tabs{
+    gap:8px;
+  }
+
+  .cc-filter-btn{
+    height:36px;
+    padding:0 14px;
+    font-size:12px;
+  }
+}
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 3
+GRID + CAST CARDS
+==================================================*/
+
+/*==================================
+GRID SECTION
+==================================*/
+
+.cc-grid-section{
+  width:100%;
+}
+
+/*==================================
+GRID
+==================================*/
+
+.cc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+/*==================================
+CARD
+==================================*/
+
+.cc-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 8px 26px rgba(0,0,0,.24);
+  transition:var(--cc-transition);
+}
+
+.cc-card:hover{
+  transform:translateY(-4px);
+  background:rgba(124,58,237,.08);
+  border-color:rgba(124,58,237,.25);
+  box-shadow:0 16px 35px rgba(0,0,0,.35);
+}
+
+/*==================================
+THUMBNAIL
+==================================*/
+
+.cc-thumb{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  background:#0f1220;
+  overflow:hidden;
+}
+
+.cc-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  transition:.35s ease;
+}
+
+.cc-card:hover .cc-thumb img{
+  transform:scale(1.05);
+}
+
+/*==================================
+INFO
+==================================*/
+
+.cc-info{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:12px 12px 14px;
+}
+
+.cc-name{
+  margin:0;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.35;
+  color:#fff;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.cc-role{
+  margin:0;
+  font-size:13px;
+  font-weight:500;
+  color:var(--cc-text-light);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/*==================================
+EMPTY STATE
+==================================*/
+
+.cc-empty{
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  border:1px dashed rgba(255,255,255,.12);
+  color:var(--cc-text-muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/*==================================
+LOADER
+==================================*/
+
+.cc-loader{
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--cc-text-light);
+  font-size:14px;
+  text-align:center;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  .cc-grid{
+    gap:16px;
+  }
+
+  .cc-name{
+    font-size:14px;
+  }
+
+  .cc-role{
+    font-size:12px;
+  }
+}
+
+@media(max-width:767px){
+  .cc-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .cc-card{
+    border-radius:16px;
+  }
+
+  .cc-info{
+    padding:10px 10px 12px;
+  }
+
+  .cc-name{
+    font-size:13px;
+  }
+
+  .cc-role{
+    font-size:11px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .cc-thumb{
+    aspect-ratio:4/5;
+  }
+
+  .cc-info{
+    padding:8px 8px 10px;
+  }
+
+  .cc-name{
+    font-size:12px;
+  }
+
+  .cc-role{
+    font-size:10px;
+  }
+}
+
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 4
+PAGINATION
+==================================================*/
+
+/*==================================
+PAGINATION WRAP
+==================================*/
+
+.cc-pagination-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:6px;
+}
+
+/*==================================
+PAGINATION
+==================================*/
+
+.cc-pagination{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+}
+
+/*==================================
+PAGE BUTTON
+==================================*/
+
+.cc-page-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:40px;
+  height:40px;
+  padding:0 12px;
+
+  border-radius:10px;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  color:var(--cc-text-light);
+
+  font-size:14px;
+  font-weight:600;
+  line-height:1;
+
+  transition:var(--cc-transition);
+  user-select:none;
+}
+
+.cc-page-btn:hover{
+  background:rgba(124,58,237,.12);
+  border-color:rgba(124,58,237,.30);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
+.cc-page-btn.is-active{
+  background:var(--cc-gradient);
+  border-color:transparent;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(124,58,237,.25);
+}
+
+/*==================================
+DISABLED
+==================================*/
+
+.cc-page-btn.is-disabled{
+  opacity:.45;
+  pointer-events:none;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/*==================================
+ELLIPSIS
+==================================*/
+
+.cc-page-ellipsis{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:40px;
+  color:var(--cc-text-muted);
+  font-size:14px;
+  font-weight:700;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  .cc-pagination{
+    gap:7px;
+  }
+
+  .cc-page-btn{
+    min-width:38px;
+    height:38px;
+    font-size:13px;
+  }
+
+  .cc-page-ellipsis{
+    height:38px;
+    font-size:13px;
+  }
+}
+
+@media(max-width:767px){
+  .cc-pagination{
+    gap:6px;
+  }
+
+  .cc-page-btn{
+    min-width:36px;
+    height:36px;
+    padding:0 10px;
+    font-size:12px;
+    border-radius:9px;
+  }
+
+  .cc-page-ellipsis{
+    height:36px;
+    font-size:12px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-pagination{
+    gap:5px;
+  }
+
+  .cc-page-btn{
+    min-width:34px;
+    height:34px;
+    padding:0 9px;
+    font-size:12px;
+  }
+
+  .cc-page-ellipsis{
+    height:34px;
+    font-size:12px;
+  }
+}
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 5
+LOADING + EMPTY STATE POLISH
+==================================================*/
+
+/*==================================
+EMPTY STATE
+==================================*/
+
+.cc-empty{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:180px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  border:1px dashed rgba(255,255,255,.12);
+  color:var(--cc-text-muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/*==================================
+LOADER
+==================================*/
+
+.cc-loader{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:180px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--cc-text-light);
+  font-size:14px;
+  text-align:center;
+  position:relative;
+}
+
+/*==================================
+LOADER DOTS
+==================================*/
+
+.cc-loader::after{
+  content:"";
+  width:10px;
+  height:10px;
+  margin-left:10px;
+  border-radius:50%;
+  background:var(--cc-primary);
+  box-shadow:
+    16px 0 0 rgba(124,58,237,.55),
+    32px 0 0 rgba(124,58,237,.30);
+  animation:ccLoaderDots 1s infinite ease-in-out;
+}
+
+@keyframes ccLoaderDots{
+  0%, 80%, 100%{
+    transform:translateY(0);
+    opacity:.7;
+  }
+  40%{
+    transform:translateY(-4px);
+    opacity:1;
+  }
+}
+
+/*==================================
+SMALL IMPROVEMENTS
+==================================*/
+
+.cc-grid-section{
+  width:100%;
+}
+
+.cc-pagination-wrap{
+  margin-top:14px;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:767px){
+  .cc-empty,
+  .cc-loader{
+    min-height:150px;
+    font-size:13px;
+    border-radius:14px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-empty,
+  .cc-loader{
+    min-height:130px;
+    padding:16px;
+    font-size:12px;
+  }
+}
+
+/*==================================================
+CAST & CREW LIST PAGE
+PART 6
+FINAL RESPONSIVE POLISH
+==================================================*/
+
+/*==================================
+SMOOTH ANIMATIONS
+==================================*/
+
+.cc-card,
+.cc-filter,
+.cc-page-btn{
+    will-change:transform;
+}
+
+/*==================================
+IMAGE PLACEHOLDER
+==================================*/
+
+.cc-thumb{
+    background:
+        linear-gradient(
+            135deg,
+            #161922 0%,
+            #1d2230 100%
+        );
+}
+
+.cc-thumb img{
+    display:block;
+}
+
+/*==================================
+TEXT SELECTION
+==================================*/
+
+.cc-name,
+.cc-role{
+    user-select:none;
+}
+
+/*==================================
+CARD CLICK EFFECT
+==================================*/
+
+.cc-card:active{
+    transform:scale(.98);
+}
+
+/*==================================
+FILTER BAR SCROLL
+==================================*/
+
+.cc-filter-menu{
+    scrollbar-width:none;
+}
+
+.cc-filter-menu::-webkit-scrollbar{
+    display:none;
+}
+
+/*==================================
+PAGINATION SPACING
+==================================*/
+
+.cc-pagination-wrap{
+    margin-top:28px;
+    padding-top:6px;
+}
+
+/*==================================
+CARD HOVER
+==================================*/
+
+@media(hover:hover){
+
+.cc-card:hover .cc-name{
+    color:#fff;
+}
+
+.cc-card:hover .cc-role{
+    color:#d7cbff;
+}
+
+}
+
+/*==================================
+DESKTOP
+==================================*/
+
+@media(min-width:1200px){
+
+.cc-grid{
+    gap:22px;
+}
+
+}
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:991px){
+
+.cc-container{
+    padding-inline:18px;
+}
+
+.cc-grid{
+    gap:14px;
+}
+
+}
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:767px){
+
+.cc-container{
+    padding-inline:14px;
+}
+
+/* 3 cards hamesha */
+
+.cc-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+}
+
+.cc-thumb{
+    aspect-ratio:4/5;
+}
+
+.cc-info{
+    padding:8px;
+}
+
+.cc-name{
+    font-size:12px;
+}
+
+.cc-role{
+    font-size:10px;
+}
+
+.cc-filter-menu{
+    gap:8px;
+}
+
+.cc-pagination{
+    gap:5px;
+}
+
+}
+
+/*==================================
+VERY SMALL MOBILE
+==================================*/
+
+@media(max-width:360px){
+
+.cc-grid{
+    gap:8px;
+}
+
+.cc-name{
+    font-size:11px;
+}
+
+.cc-role{
+    font-size:9px;
+}
+
+.cc-page-btn{
+    min-width:30px;
+    height:30px;
+    font-size:11px;
+}
+
+}
+
+/*==================================
+END
+==================================*/
