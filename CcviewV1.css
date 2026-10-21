@@ -1,0 +1,1719 @@
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 1
+FOUNDATION + THEME
+==================================================*/
+
+/*==================================
+ROOT
+==================================*/
+
+:root{
+  --cc-bg:#09090f;
+  --cc-surface:#11131d;
+  --cc-surface-2:#171b28;
+  --cc-border:rgba(124,58,237,.22);
+  --cc-border-soft:rgba(255,255,255,.08);
+
+  --cc-primary:#7c3aed;
+  --cc-primary-2:#a855f7;
+  --cc-primary-3:#c026d3;
+  --cc-gradient:linear-gradient(135deg,#6d28d9 0%,#9333ea 45%,#c026d3 100%);
+
+  --cc-text:#ffffff;
+  --cc-text-light:#c5c8d4;
+  --cc-text-muted:#8e93a8;
+
+  --cc-radius:22px;
+  --cc-radius-sm:14px;
+  --cc-radius-xs:10px;
+
+  --cc-shadow:0 10px 35px rgba(0,0,0,.45);
+  --cc-shadow-2:0 18px 60px rgba(0,0,0,.55);
+
+  --cc-transition:.30s ease;
+}
+
+/*==================================
+PAGE
+==================================*/
+
+#cc-view{
+  width:100%;
+  background:var(--cc-bg);
+  color:var(--cc-text);
+  padding:34px 0 60px;
+  overflow:hidden;
+}
+
+/*==================================
+CONTAINER
+==================================*/
+
+.cc-container{
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  padding:0 26px;
+  box-sizing:border-box;
+}
+
+/*==================================
+GLOBAL GRID
+==================================*/
+
+.cc-page{
+  width:100%;
+}
+
+.cc-container > *{
+  margin-bottom:26px;
+}
+
+.cc-container > *:last-child{
+  margin-bottom:0;
+}
+
+/*==================================
+SECTIONS
+==================================*/
+
+.cc-hero,
+.cc-about-card,
+.cc-work-card,
+.cc-news-card,
+.cc-related-card{
+  background:var(--cc-surface);
+  border:1px solid var(--cc-border-soft);
+  border-radius:var(--cc-radius);
+  box-shadow:var(--cc-shadow);
+  overflow:hidden;
+}
+
+/*==================================
+SECTION PADDING
+==================================*/
+
+.cc-hero{
+  padding:22px;
+}
+
+.cc-about-card,
+.cc-work-card,
+.cc-news-card,
+.cc-related-card{
+  padding:22px;
+}
+
+/*==================================
+SECTION TITLES
+==================================*/
+
+.cc-section-title{
+  margin:0;
+  font-size:26px;
+  font-weight:700;
+  line-height:1.25;
+  color:var(--cc-text);
+  letter-spacing:-.02em;
+}
+
+/*==================================
+SECTION HEADER
+==================================*/
+
+.cc-section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.cc-section-header .cc-section-title{
+  flex:1;
+  min-width:0;
+}
+
+.cc-section-header a{
+  flex-shrink:0;
+  color:var(--cc-primary);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:var(--cc-transition);
+}
+
+.cc-section-header a:hover{
+  color:#fff;
+}
+
+/*==================================
+LINKS
+==================================*/
+
+#cc-view a{
+  color:inherit;
+  text-decoration:none;
+  transition:var(--cc-transition);
+}
+
+#cc-view a:hover{
+  text-decoration:none;
+}
+
+/*==================================
+IMAGES
+==================================*/
+
+#cc-view img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:0;
+}
+
+/*==================================
+BUTTONS
+==================================*/
+
+#cc-view button{
+  font:inherit;
+  border:none;
+  outline:none;
+  cursor:pointer;
+}
+
+/*==================================
+BOX SIZING
+==================================*/
+
+#cc-view *,
+#cc-view *::before,
+#cc-view *::after{
+  box-sizing:border-box;
+}
+
+/*==================================
+SCROLLBAR
+==================================*/
+
+::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#09090f;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#2b2148;
+  border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#6d28d9;
+}
+
+/*==================================
+SELECTION
+==================================*/
+
+::selection{
+  background:#7c3aed;
+  color:#fff;
+}
+
+/*==================================
+FOCUS
+==================================*/
+
+button:focus-visible,
+a:focus-visible{
+  outline:2px solid var(--cc-primary);
+  outline-offset:3px;
+}
+
+/*==================================
+MOTION
+==================================*/
+
+html{
+  scroll-behavior:smooth;
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  #cc-view{
+    padding:26px 0 48px;
+  }
+
+  .cc-container{
+    padding:0 20px;
+  }
+
+  .cc-section-title{
+    font-size:24px;
+  }
+}
+
+@media(max-width:767px){
+  #cc-view{
+    padding:18px 0 40px;
+  }
+
+  .cc-container{
+    padding:0 16px;
+  }
+
+  .cc-hero,
+  .cc-about-card,
+  .cc-work-card,
+  .cc-news-card,
+  .cc-related-card{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  .cc-section-header{
+    margin-bottom:14px;
+  }
+
+  .cc-section-title{
+    font-size:22px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-container{
+    padding:0 14px;
+  }
+
+  .cc-section-title{
+    font-size:20px;
+  }
+}
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 2
+HERO PROFILE
+==================================================*/
+
+/*==================================
+HERO
+==================================*/
+
+.cc-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top right, rgba(124,58,237,.18), transparent 35%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+    var(--cc-surface);
+}
+
+.cc-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.18), rgba(0,0,0,0)),
+    radial-gradient(circle at 20% 20%, rgba(168,85,247,.10), transparent 30%);
+  pointer-events:none;
+}
+
+.cc-hero > *{
+  position:relative;
+  z-index:1;
+}
+
+/*==================================
+BREADCRUMB
+==================================*/
+
+.cc-breadcrumb{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+  font-size:13px;
+  color:var(--cc-text-muted);
+}
+
+.cc-breadcrumb a{
+  color:var(--cc-text-light);
+  opacity:.9;
+}
+
+.cc-breadcrumb a:hover{
+  color:#fff;
+}
+
+.cc-breadcrumb span{
+  opacity:.5;
+  user-select:none;
+}
+
+.cc-current-name{
+  color:#fff;
+  font-weight:500;
+}
+
+/*==================================
+HERO MAIN
+==================================*/
+
+.cc-hero-main{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:22px;
+  align-items:center;
+}
+
+/*==================================
+PROFILE IMAGE
+==================================*/
+
+.cc-hero-image-wrap{
+  position:relative;
+  width:220px;
+  aspect-ratio:1/1.2;
+  border-radius:22px;
+  overflow:hidden;
+  background:#0b0d15;
+  box-shadow:0 12px 35px rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.cc-hero-image-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.18) 100%);
+  pointer-events:none;
+}
+
+.cc-hero-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+
+/*==================================
+HERO INFO
+==================================*/
+
+.cc-hero-info{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+}
+
+/*==================================
+NAME + VERIFIED
+==================================*/
+
+.cc-name{
+  margin:0;
+  font-size:44px;
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  color:#fff;
+  word-break:break-word;
+}
+
+.cc-verified{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  margin-left:8px;
+  color:#9b6dff;
+  font-size:18px;
+  vertical-align:middle;
+}
+
+.cc-name + .cc-verified{
+  margin-top:-4px;
+}
+
+/*==================================
+PROFESSION
+==================================*/
+
+.cc-profession{
+  margin:0;
+  font-size:18px;
+  font-weight:500;
+  color:var(--cc-text-light);
+}
+
+/*==================================
+SOCIALS
+==================================*/
+
+.cc-socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:8px;
+}
+
+.cc-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#0d1020;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  transition:var(--cc-transition);
+}
+
+.cc-social:hover{
+  transform:translateY(-2px);
+  border-color:rgba(124,58,237,.5);
+  background:rgba(124,58,237,.12);
+  color:#fff;
+}
+
+.cc-social i{
+  font-size:18px;
+}
+
+/*==================================
+OPTIONAL PROFILE CTA SPACE
+==================================*/
+
+.cc-hero-info .cc-profession,
+.cc-hero-info .cc-socials{
+  flex-shrink:0;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+  .cc-hero-main{
+    grid-template-columns:180px minmax(0,1fr);
+    gap:18px;
+  }
+
+  .cc-hero-image-wrap{
+    width:180px;
+  }
+
+  .cc-name{
+    font-size:36px;
+  }
+
+  .cc-profession{
+    font-size:16px;
+  }
+}
+
+@media(max-width:767px){
+  .cc-breadcrumb{
+    margin-bottom:14px;
+    font-size:12px;
+    gap:8px;
+  }
+
+  .cc-hero-main{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .cc-hero-image-wrap{
+    width:100%;
+    max-width:340px;
+    margin:0 auto;
+    aspect-ratio:1/1;
+    border-radius:18px;
+  }
+
+  .cc-hero-info{
+    align-items:center;
+    text-align:center;
+  }
+
+  .cc-name{
+    font-size:30px;
+  }
+
+  .cc-profession{
+    font-size:15px;
+  }
+
+  .cc-socials{
+    justify-content:center;
+    gap:10px;
+    margin-top:4px;
+  }
+
+  .cc-social{
+    width:40px;
+    height:40px;
+  }
+
+  .cc-social i{
+    font-size:16px;
+  }
+}
+
+@media(max-width:480px){
+  .cc-name{
+    font-size:26px;
+  }
+
+  .cc-profession{
+    font-size:14px;
+  }
+
+  .cc-social{
+    width:38px;
+    height:38px;
+  }
+}
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 3
+ABOUT SECTION
+==================================================*/
+
+/*==================================
+ABOUT CARD
+==================================*/
+
+.cc-about-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.cc-about-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    background:linear-gradient(
+        180deg,
+        rgba(124,58,237,.08) 0%,
+        rgba(124,58,237,.03) 45%,
+        rgba(124,58,237,0) 100%
+    );
+    pointer-events:none;
+}
+
+/*==================================
+TITLE
+==================================*/
+
+.cc-about-card .cc-section-title{
+    margin-bottom:16px;
+    position:relative;
+    z-index:1;
+}
+
+/*==================================
+CONTENT
+==================================*/
+
+.cc-about-content{
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+}
+
+/*==================================
+TEXT
+==================================*/
+
+.cc-about-text{
+    margin:0;
+    font-size:16px;
+    line-height:1.9;
+    color:var(--cc-text-light);
+    word-break:break-word;
+}
+
+/*==================================
+COLLAPSED
+==================================*/
+
+.cc-about-content.is-collapsed{
+    max-height:185px;
+}
+
+.cc-about-content.is-collapsed::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:70px;
+    background:linear-gradient(
+        180deg,
+        rgba(17,19,29,0) 0%,
+        rgba(17,19,29,.70) 45%,
+        rgba(17,19,29,1) 100%
+    );
+    pointer-events:none;
+}
+
+/*==================================
+EXPANDED
+==================================*/
+
+.cc-about-content.is-expanded{
+    max-height:none;
+}
+
+.cc-about-content.is-expanded::after{
+    display:none;
+}
+
+/*==================================
+READ MORE BUTTON
+==================================*/
+
+.cc-readmore-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    margin-top:20px;
+
+    height:48px;
+    min-width:170px;
+    padding:0 24px;
+
+    border-radius:999px;
+
+    background:rgba(124,58,237,.12);
+    border:1px solid rgba(124,58,237,.35);
+
+    color:#fff;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:var(--cc-transition);
+
+    position:relative;
+    z-index:1;
+}
+
+.cc-readmore-btn:hover{
+    background:var(--cc-gradient);
+    border-color:transparent;
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(124,58,237,.35);
+}
+
+.cc-readmore-btn i{
+    font-size:13px;
+    transition:.25s;
+}
+
+.cc-readmore-btn.active i{
+    transform:rotate(180deg);
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+
+.cc-about-content.is-collapsed{
+    max-height:175px;
+}
+
+.cc-about-text{
+    font-size:15px;
+    line-height:1.8;
+}
+
+}
+
+@media(max-width:767px){
+
+.cc-about-card .cc-section-title{
+    margin-bottom:14px;
+}
+
+.cc-about-content.is-collapsed{
+    max-height:165px;
+}
+
+.cc-about-text{
+    font-size:15px;
+    line-height:1.75;
+}
+
+.cc-readmore-btn{
+    width:100%;
+    height:46px;
+    margin-top:18px;
+    font-size:14px;
+}
+
+}
+
+@media(max-width:480px){
+
+.cc-about-text{
+    font-size:14px;
+    line-height:1.7;
+}
+
+.cc-about-content.is-collapsed{
+    max-height:155px;
+}
+
+}
+
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 4
+SOCIAL MEDIA
+==================================================*/
+
+/*==================================
+SECTION
+==================================*/
+
+.cc-social-card{
+    position:relative;
+}
+
+.cc-social-list{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+}
+
+/*==================================
+BUTTON
+==================================*/
+
+.cc-social-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    height:110px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:var(--cc-transition);
+}
+
+.cc-social-item:hover{
+    transform:translateY(-4px);
+    background:rgba(124,58,237,.12);
+    border-color:rgba(124,58,237,.45);
+    box-shadow:0 16px 35px rgba(124,58,237,.18);
+}
+
+/*==================================
+ICON
+==================================*/
+
+.cc-social-icon{
+    width:54px;
+    height:54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.15);
+    color:#fff;
+
+    font-size:22px;
+
+    transition:.3s;
+}
+
+.cc-social-item:hover .cc-social-icon{
+    transform:scale(1.08);
+    background:var(--cc-gradient);
+}
+
+/*==================================
+TEXT
+==================================*/
+
+.cc-social-name{
+    font-size:14px;
+    font-weight:600;
+    color:var(--cc-text-light);
+}
+
+.cc-social-item:hover .cc-social-name{
+    color:#fff;
+}
+
+/*==================================
+PLATFORM COLORS
+==================================*/
+
+.cc-social-item.instagram:hover .cc-social-icon{
+    background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+.cc-social-item.facebook:hover .cc-social-icon{
+    background:#1877f2;
+}
+
+.cc-social-item.twitter:hover .cc-social-icon{
+    background:#000;
+}
+
+.cc-social-item.youtube:hover .cc-social-icon{
+    background:#ff0000;
+}
+
+.cc-social-item.threads:hover .cc-social-icon{
+    background:#111;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+
+.cc-social-list{
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.cc-social-item{
+    height:95px;
+}
+
+.cc-social-icon{
+    width:48px;
+    height:48px;
+    font-size:20px;
+}
+
+}
+
+@media(max-width:767px){
+
+.cc-social-list{
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.cc-social-item{
+    height:82px;
+    border-radius:14px;
+    gap:8px;
+}
+
+.cc-social-icon{
+    width:40px;
+    height:40px;
+    font-size:17px;
+}
+
+.cc-social-name{
+    font-size:11px;
+}
+
+}
+
+@media(max-width:420px){
+
+.cc-social-item{
+    height:76px;
+}
+
+.cc-social-icon{
+    width:36px;
+    height:36px;
+    font-size:16px;
+}
+
+.cc-social-name{
+    font-size:10px;
+}
+
+}
+
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 5
+WORK LIST
+==================================================*/
+
+/*==================================
+WORK CARD
+==================================*/
+
+.cc-work-card{
+    position:relative;
+}
+
+/*==================================
+HEADER
+==================================*/
+
+.cc-work-card .cc-section-header{
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+/*==================================
+TABS
+==================================*/
+
+.cc-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+.cc-tab{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height:40px;
+    padding:0 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    color:var(--cc-text-light);
+    font-size:14px;
+    font-weight:600;
+    transition:var(--cc-transition);
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.cc-tab:hover{
+    background:rgba(124,58,237,.10);
+    border-color:rgba(124,58,237,.30);
+    color:#fff;
+}
+
+.cc-tab.is-active{
+    background:var(--cc-gradient);
+    border-color:transparent;
+    color:#fff;
+    box-shadow:0 10px 24px rgba(124,58,237,.25);
+}
+
+/*==================================
+GRID
+==================================*/
+
+.cc-work-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+
+/*==================================
+WORK CARD ITEM
+==================================*/
+
+.cc-work-item{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    border-radius:18px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 8px 26px rgba(0,0,0,.24);
+    transition:var(--cc-transition);
+}
+
+.cc-work-item:hover{
+    transform:translateY(-4px);
+    background:rgba(124,58,237,.08);
+    border-color:rgba(124,58,237,.25);
+    box-shadow:0 16px 35px rgba(0,0,0,.35);
+}
+
+/*==================================
+THUMBNAIL
+==================================*/
+
+.cc-work-thumb{
+    position:relative;
+    width:100%;
+    aspect-ratio:4/5;
+    background:#0f1220;
+    overflow:hidden;
+}
+
+.cc-work-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    transition:.35s ease;
+}
+
+.cc-work-item:hover .cc-work-thumb img{
+    transform:scale(1.05);
+}
+
+/*==================================
+CONTENT
+==================================*/
+
+.cc-work-info{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding:12px 12px 14px;
+}
+
+.cc-work-title{
+    margin:0;
+    font-size:15px;
+    font-weight:700;
+    line-height:1.35;
+    color:#fff;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.cc-work-role{
+    margin:0;
+    font-size:13px;
+    font-weight:500;
+    color:var(--cc-text-light);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/*==================================
+LOAD MORE
+==================================*/
+
+.cc-loadmore-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:48px;
+    margin-top:20px;
+    padding:0 22px;
+    border-radius:999px;
+    background:rgba(124,58,237,.12);
+    border:1px solid rgba(124,58,237,.35);
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    transition:var(--cc-transition);
+}
+
+.cc-loadmore-btn:hover{
+    transform:translateY(-2px);
+    background:var(--cc-gradient);
+    border-color:transparent;
+    box-shadow:0 12px 30px rgba(124,58,237,.35);
+}
+
+.cc-loadmore-btn:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}
+
+/*==================================
+EMPTY STATE
+==================================*/
+
+.cc-work-empty{
+    padding:18px;
+    border-radius:16px;
+    background:rgba(255,255,255,.03);
+    border:1px dashed rgba(255,255,255,.12);
+    color:var(--cc-text-muted);
+    font-size:14px;
+    text-align:center;
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+
+    .cc-work-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:16px;
+    }
+
+    .cc-work-card .cc-section-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cc-tabs{
+        justify-content:flex-start;
+    }
+}
+
+@media(max-width:767px){
+
+    .cc-work-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:14px;
+    }
+
+    .cc-tab{
+        height:38px;
+        padding:0 16px;
+        font-size:13px;
+    }
+
+    .cc-work-info{
+        padding:10px 10px 12px;
+    }
+
+    .cc-work-title{
+        font-size:14px;
+    }
+
+    .cc-work-role{
+        font-size:12px;
+    }
+
+    .cc-loadmore-btn{
+        height:46px;
+        margin-top:18px;
+        font-size:14px;
+    }
+}
+
+@media(max-width:520px){
+
+    .cc-work-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .cc-work-thumb{
+        aspect-ratio:4/5;
+    }
+}
+
+@media(max-width:420px){
+
+    .cc-work-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cc-work-item{
+        border-radius:16px;
+    }
+
+    .cc-work-thumb{
+        aspect-ratio:16/9;
+    }
+
+    .cc-work-title{
+        font-size:15px;
+    }
+}
+
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 6
+LATEST NEWS & GOSSIPS
+==================================================*/
+
+/*==================================
+SECTION
+==================================*/
+
+.cc-news-card{
+    position:relative;
+}
+
+/*==================================
+HEADER
+==================================*/
+
+.cc-news-card .cc-section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.cc-news-viewall{
+    color:var(--cc-primary);
+    font-size:14px;
+    font-weight:600;
+    transition:var(--cc-transition);
+}
+
+.cc-news-viewall:hover{
+    color:#fff;
+}
+
+/*==================================
+LIST
+==================================*/
+
+.cc-news-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.02);
+}
+
+/*==================================
+ITEM
+==================================*/
+
+.cc-news-item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:var(--cc-transition);
+}
+
+.cc-news-item:last-child{
+    border-bottom:none;
+}
+
+.cc-news-item:hover{
+    background:rgba(124,58,237,.08);
+}
+
+/*==================================
+THUMBNAIL
+==================================*/
+
+.cc-news-thumb{
+    width:180px;
+    aspect-ratio:16/9;
+
+    flex-shrink:0;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    background:#151823;
+}
+
+.cc-news-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.cc-news-item:hover .cc-news-thumb img{
+    transform:scale(1.05);
+}
+
+/*==================================
+CONTENT
+==================================*/
+
+.cc-news-info{
+    flex:1;
+    min-width:0;
+}
+
+/*==================================
+CATEGORY
+==================================*/
+
+.cc-news-category{
+    display:inline-block;
+
+    margin-bottom:8px;
+
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    background:rgba(124,58,237,.15);
+
+    color:var(--cc-primary);
+
+    font-size:11px;
+    font-weight:700;
+
+    text-transform:uppercase;
+    letter-spacing:.06em;
+}
+
+/*==================================
+TITLE
+==================================*/
+
+.cc-news-title{
+    margin:0 0 8px;
+
+    font-size:21px;
+    font-weight:700;
+    line-height:1.4;
+
+    color:#fff;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/*==================================
+DESCRIPTION
+==================================*/
+
+.cc-news-desc{
+    margin:0 0 10px;
+
+    font-size:15px;
+    line-height:1.7;
+
+    color:var(--cc-text-light);
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/*==================================
+DATE
+==================================*/
+
+.cc-news-date{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:13px;
+    color:var(--cc-text-muted);
+}
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:991px){
+
+.cc-news-thumb{
+    width:160px;
+}
+
+.cc-news-title{
+    font-size:18px;
+}
+
+}
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:767px){
+
+.cc-news-item{
+    padding:12px;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.cc-news-thumb{
+    width:140px;
+}
+
+.cc-news-title{
+    font-size:15px;
+}
+
+.cc-news-desc{
+    font-size:13px;
+    line-height:1.6;
+}
+
+.cc-news-category{
+    font-size:10px;
+    padding:3px 8px;
+}
+
+.cc-news-date{
+    font-size:12px;
+}
+
+}
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+.cc-news-thumb{
+    width:125px;
+}
+
+.cc-news-title{
+    font-size:14px;
+}
+
+.cc-news-desc{
+    font-size:12px;
+}
+
+}
+
+/*==================================================
+CAST & CREW VIEW v1.0
+PART 7
+RELATED CAST & CREW
+==================================================*/
+
+/*==================================
+SECTION
+==================================*/
+
+.cc-related-card{
+    position:relative;
+}
+
+/*==================================
+HEADER
+==================================*/
+
+.cc-related-card .cc-section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.cc-related-viewall{
+    color:var(--cc-primary);
+    font-size:14px;
+    font-weight:600;
+    transition:var(--cc-transition);
+}
+
+.cc-related-viewall:hover{
+    color:#fff;
+}
+
+/*==================================
+GRID
+==================================*/
+
+.cc-related-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:18px;
+}
+
+/*==================================
+CARD
+==================================*/
+
+.cc-related-item{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:var(--cc-transition);
+
+    box-shadow:0 8px 26px rgba(0,0,0,.25);
+}
+
+.cc-related-item:hover{
+    transform:translateY(-4px);
+
+    background:rgba(124,58,237,.08);
+
+    border-color:rgba(124,58,237,.30);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(124,58,237,.18);
+}
+
+/*==================================
+PROFILE IMAGE
+==================================*/
+
+.cc-related-thumb{
+    width:100%;
+    aspect-ratio:1/1;
+
+    overflow:hidden;
+
+    background:#161922;
+}
+
+.cc-related-thumb img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    transition:.35s;
+}
+
+.cc-related-item:hover .cc-related-thumb img{
+    transform:scale(1.06);
+}
+
+/*==================================
+NAME
+==================================*/
+
+.cc-related-info{
+    padding:14px 10px;
+    text-align:center;
+}
+
+.cc-related-name{
+    margin:0;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#fff;
+
+    line-height:1.45;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+}
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:991px){
+
+.cc-related-grid{
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.cc-related-name{
+    font-size:14px;
+}
+
+}
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:767px){
+
+.cc-related-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.cc-related-item{
+    border-radius:16px;
+}
+
+.cc-related-info{
+    padding:10px 8px;
+}
+
+.cc-related-name{
+    font-size:13px;
+    line-height:1.4;
+}
+
+}
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+.cc-related-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.cc-related-name{
+    font-size:13px;
+}
+
+}
