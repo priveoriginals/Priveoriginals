@@ -764,11 +764,13 @@ RESPONSIVE
   }
 
   .vp-hero-section{
-    margin-bottom:14px;
+    margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  width:100vw;
   }
 
   .vp-hero-slider{
-    gap:8px;
+    gap:0px;
   }
 
   .vp-hero-arrow{
@@ -778,7 +780,7 @@ RESPONSIVE
   }
 
   .vp-hero-viewport{
-    border-radius:22px;
+      border-radius:0;
   }
 
   .vp-hero-card{
