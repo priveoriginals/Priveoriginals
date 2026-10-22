@@ -561,6 +561,7 @@ SIDEBAR LISTS
 
 .vp-side-card{
   display:flex;
+  align-items:flex-start;
   gap:10px;
   padding:8px;
   border-radius:14px;
@@ -574,8 +575,8 @@ SIDEBAR LISTS
 
 .vp-side-thumb{
   position:relative;
-  flex:0 0 84px;
-  width:84px;
+  flex:0 0 120px;
+  width:120px;
   aspect-ratio:16/9;
   border-radius:10px;
   overflow:hidden;
@@ -996,8 +997,9 @@ RESPONSIVE
   }
 
   .vp-side-thumb{
-    flex-basis:72px;
-    width:72px;
+    flex:0 0 100px;
+    width:100px;
+    aspect-ratio:16/9;
   }
 
   .vp-section-title{
