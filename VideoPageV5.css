@@ -223,8 +223,8 @@ HERO
 
 .vp-hero-title{
   margin:0;
-  font-size:40px;
-  font-weight:900;
+  font-size:20px;
+  font-weight:500;
   line-height:1;
   letter-spacing:-.03em;
   color:#fff;
@@ -234,7 +234,7 @@ HERO
 .vp-hero-subtitle{
   margin:8px 0 0;
   font-size:22px;
-  font-weight:800;
+  font-weight:600;
   line-height:1.15;
   color:#fff;
 }
@@ -739,15 +739,15 @@ RESPONSIVE
   }
 
   .vp-hero-title{
-    font-size:34px;
+    font-size:14px;
   }
 
   .vp-hero-subtitle{
-    font-size:18px;
+    font-size:15px;
   }
 
   .vp-hero-highlight{
-    font-size:14px;
+    font-size:12px;
   }
 
   .vp-video-grid{
@@ -801,12 +801,12 @@ RESPONSIVE
   }
 
   .vp-hero-title{
-    font-size:20px;
+    font-size:12px;
     line-height:1.02;
   }
 
   .vp-hero-subtitle{
-    font-size:14px;
+    font-size:13px;
     margin-top:5px;
   }
 
