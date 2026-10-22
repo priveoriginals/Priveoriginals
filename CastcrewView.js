@@ -684,7 +684,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const doc = new DOMParser().parseFromString(html, "text/html");
 
       const description =
-        (doc.querySelector(".news-summary")?.textContent || "").trim() ||
+        (doc.querySelector(".news-short-desc")?.textContent || "").trim() ||
         (doc.querySelector(".news-short-description")?.textContent || "").trim() ||
         (doc.querySelector(".news-description")?.textContent || "").trim() ||
         Helper.stripHtml(html).slice(0, 180);
